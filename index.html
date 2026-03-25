@@ -8,17 +8,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17483589503"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17483589503');
-</script>
-
-
 <body>
 
 <!-- HERO -->
@@ -168,17 +157,19 @@
         <a href="/impressum">Impressum</a> |
         <a href="/datenschutz">Datenschutz</a>
     </p>
+    <div class="spacer-10"></div>
+    <button onclick="resetConsent()">Cookie-Einstellungen ändern</button>
 </footer>
 
 <div id="tracking-banner" class="tracking-banner">
     <div class="tracking-content">
         <p>
             <strong>Tracking-Hinweis</strong><br>
-            Der Hosting-Anbieter dieser Website erfasst Logdaten und verpflichtet mich damit zum Hinweis auf Tracking.
+            Der Hosting-Anbieter dieser Website erfasst Logdaten und verpflichtet mich damit zum Hinweis auf Tracking. Derzeit ist aufgrund einer Google-Ads-Kampagne der Google Tag Manager aktiv.
             Weitere Infos findest du in der <a href="datenschutz">Datenschutzerklärung</a>.
         </p>
-
-        <button onclick="acceptTracking()">OK</button>
+        <button onclick="acceptAll()">Alle akzeptieren</button>
+        <button onclick="acceptEssential()">Nur notwendige</button>
     </div>
 </div>
 

@@ -7,17 +7,6 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17483589503"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17483589503');
-</script>
-
-
 <body>
 
 <section class="section">
@@ -42,10 +31,48 @@
             Anbieter ist die Strato AG, Otto-Ostrowski-Straße 7, 10249 Berlin (nachfolgend „Strato“). Wenn du die Website laurabritt.de besuchst, erfasst Strato verschiedene Logfiles inklusive Ihrer IP-Adressen. Mehr Informationen dazu bekommst du unter
             <a href="https://www.strato.de/datenschutz/" target="_blank">https://www.strato.de/datenschutz/</a>.
         </p>
+        <div class="spacer-40"></div>
+        <h2>Google Tag Manager und Google Ads</h2>
+        <p>
+            Wir verwenden auf unserer Website den Google Tag Manager sowie Google Ads, Dienste der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
 
+            Der Google Tag Manager dient der Verwaltung und Ausspielung von Tracking-Tags. Der Tag Manager selbst verarbeitet keine personenbezogenen Daten, ermöglicht jedoch die Einbindung weiterer Dienste.
+
+            Über den Google Tag Manager wird Google Ads eingesetzt. Google Ads ermöglicht es uns, Werbeanzeigen in den Suchergebnissen von Google sowie im Google-Werbenetzwerk zu schalten und deren Erfolg zu messen (Conversion-Tracking). Dabei können Cookies gesetzt und Informationen über deine Nutzung unserer Website verarbeitet werden, insbesondere: aufgerufene Seiten, Interaktionen auf der Website, IP-Adresse (ggf. gekürzt) und Geräte- und Browserinformationen
+
+            Diese Daten können von Google mit weiteren Daten aus deinem Google-Konto zusammengeführt werden, sofern du dort eingeloggt bist.
+
+            Die Verarbeitung erfolgt ausschließlich auf Grundlage deiner Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TTDSG. Deine Einwilligung kannst du jederzeit über unser Cookie-Banner widerrufen.
+
+            Wir haben mit Google einen Vertrag zur Auftragsverarbeitung abgeschlossen. Eine Datenübertragung in die USA kann nicht ausgeschlossen werden. Google ist nach dem EU-U.S. Data Privacy Framework zertifiziert, wodurch ein angemessenes Datenschutzniveau gewährleistet wird.
+
+            Weitere Informationen findest du in den Datenschutzhinweisen von Google:<br>
+            <a href="https://marketingplatform.google.com/about/analytics/tag-manager/use-policy/" target="_blank">https://marketingplatform.google.com/about/analytics/tag-manager/use-policy/</a><br>
+            <a href="https://policies.google.com/terms?hl=de" target="_blank">https://policies.google.com/terms?hl=de</a><br>
+            <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
+
+        </p>
+        <div class="spacer-20"></div>
+        <button onclick="resetConsent()">Cookie-Einstellungen ändern</button>
+        <div class="spacer-10"></div>
         <a href="/" class="btn">Zurück zur Startseite</a>
+
     </div>
 </section>
+
+<div id="tracking-banner" class="tracking-banner">
+    <div class="tracking-content">
+        <p>
+            <strong>Tracking-Hinweis</strong><br>
+            Der Hosting-Anbieter dieser Website erfasst Logdaten und verpflichtet mich damit zum Hinweis auf Tracking. Derzeit ist aufgrund einer Google-Ads-Kampagne der Google Tag Manager aktiv.
+            Weitere Infos findest du in der <a href="/datenschutz">Datenschutzerklärung</a>.
+        </p>
+        <button onclick="acceptAll()">Alle akzeptieren</button>
+        <button onclick="acceptEssential()">Nur notwendige</button>
+    </div>
+</div>
+
+<script src="/script.js"></script>
 
 </body>
 </html>
