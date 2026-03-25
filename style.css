@@ -1,0 +1,376 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* SPACER */
+
+.spacer-10 {
+    min-height: 10px;
+}
+
+.spacer-20 {
+    min-height: 20px;
+}
+
+.spacer-40 {
+    min-height: 40px;
+}
+
+/* BODY */
+body {
+    background: #0f172a;
+    color: white;
+    line-height: 1.6;
+    text-align: center; /* GLOBAL CENTER */
+}
+
+.trust {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+a {
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CENTER CONTENT */
+}
+
+/* ================= Tracking Banner ================= */
+
+.tracking-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 9999;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.tracking-content p {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+.tracking-content a {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+.tracking-small {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.tracking-banner button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Canvas Background */
+#network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* verhindert Klick-Probleme */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #cbd5f5;
+    font-size: 1.1rem;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    border-top: 1px solid #1e293b;
+}
+
+.section.dark {
+    background: #020617;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* TEXT BLOCK */
+.section-text {
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: #cbd5f5;
+}
+
+/* ================= GRID ================= */
+
+/* Standard Grid (z. B. Testimonials → 3 Spalten) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+/* 🔥 Benefits → 4 Spalten */
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= CARDS ================= */
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(40px);
+
+    text-align: center;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: #273449;
+}
+
+/* ================= STEPS ================= */
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* NICE CENTER WIDTH */
+}
+
+.step {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.6s ease;
+
+    text-align: center;
+}
+
+.step.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ================= PRICING ================= */
+
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    gap: 20px;
+    width: 100%;
+}
+
+.price-box {
+    width: 100%;
+    height: 100%; /* gleiche Höhe */
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Inhalte gleich verteilt */
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.price-box.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.price-box ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.price-box li {
+    margin: 8px 0;
+    color: #cbd5f5;
+}
+
+.price {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+/* Highlight */
+.highlight {
+    border: 2px solid #6366f1;
+    background: linear-gradient(180deg, #1e293b, #1a2238);
+}
+
+.price-box:hover {
+    transform: scale(1.05);
+}
+
+/* ================= CTA ================= */
+
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+}
+
+.cta p {
+    margin-top: 10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+}
+
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 60px 20px;
+    }
+
+    .pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* 1 Spalte */
+    }
+
+    .btn {
+        background: white;
+        color: #0f172a;
+        font-weight: 600;
+    }
+}
