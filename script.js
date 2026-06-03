@@ -1,8 +1,11 @@
 window.addEventListener("load", () => {
 
     const canvas = document.getElementById("network");
-    const ctx = canvas.getContext("2d");
     const hero = document.querySelector(".hero");
+
+    if (!canvas || !hero) return;
+
+    const ctx = canvas.getContext("2d");
 
     let particles = [];
     let mouse = {x: null, y: null};
@@ -150,6 +153,33 @@ gtag('consent', 'default', {
 
 // TRACKING BANNER
 
+function getTrackingBanner() {
+    return document.getElementById("tracking-banner");
+}
+
+function showTrackingBanner() {
+    const banner = getTrackingBanner();
+    if (banner) {
+        banner.style.display = "block";
+    }
+}
+
+function hideTrackingBanner() {
+    const banner = getTrackingBanner();
+    if (banner) {
+        banner.style.display = "none";
+    }
+}
+
+function getStoredConsent() {
+    try {
+        return JSON.parse(localStorage.getItem("cookie_consent"));
+    } catch (error) {
+        localStorage.removeItem("cookie_consent");
+        return null;
+    }
+}
+
 function loadGTM() {
     if (window.gtmLoaded) return;
     window.gtmLoaded = true;
@@ -178,7 +208,7 @@ function setConsent(consent) {
         loadGTM();
     }
 
-    document.getElementById("tracking-banner").style.display = "none";
+    hideTrackingBanner();
 }
 
 function acceptAll() {
@@ -191,20 +221,30 @@ function acceptEssential() {
 
 // Beim Laden prüfen
 document.addEventListener("DOMContentLoaded", function () {
-    const consent = JSON.parse(localStorage.getItem("cookie_consent"));
+    const consent = getStoredConsent();
 
     if (consent) {
-        document.getElementById("tracking-banner").style.display = "none";
+        hideTrackingBanner();
 
         if (consent.ads) {
             loadGTM();
         }
+
+        return;
     }
+
+    showTrackingBanner();
 });
 
 // Reset Tracking Banner
 
 function resetConsent() {
     localStorage.removeItem("cookie_consent");
-    location.reload();
+    gtag('consent', 'update', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    showTrackingBanner();
 }
